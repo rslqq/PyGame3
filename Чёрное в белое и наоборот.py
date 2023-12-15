@@ -26,7 +26,7 @@ class Board(object):
                 pygame.draw.rect(screen, color, rect, width)
 
     def pppos(self, pos):
-        return (pos[0] - self.left, pos[1] - self.top)\
+        return (pos[0] - self.left, pos[1] - self.top)
 
 
     def get_click(self, pos):
@@ -37,8 +37,7 @@ class Board(object):
     def on_click(self, cell):
         if cell is None:
             return
-        self.board[cell[0]][cell[1]] = {0: 1, 1: 0}[
-            self.board[cell[0]][cell[1]]]
+        self.board[cell[0]][cell[1]] = {0: 1, 1: 0}[self.board[cell[0]][cell[1]]]
         for x in range(self.width):
             self.board[x][cell[1]] = {0: 1, 1: 0}[self.board[x][cell[1]]]
         for y in range(self.heigth):
